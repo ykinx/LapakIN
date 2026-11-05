@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Plus, Trash2, AlertCircle, Store, Minus } from "lucide-react";
-import { ItemPrice, SaleItem, StallDistribution } from "../types/distribution";
+import { SaleItem, StallDistribution } from "../types/distribution";
 import { formatRupiah } from "../utils/currency";
 
 interface StallCardProps {
@@ -190,7 +190,7 @@ export const StallCard: React.FC<StallCardProps> = ({
               (typeof item.quantity !== "number" || item.quantity <= 0);
 
             const itemQty = typeof item.quantity === "number" ? item.quantity : 0;
-            const itemPrice: ItemPrice = item.price || 10000;
+            const itemPrice = Number(item.price || 10000);
             const itemSubtotal = itemQty * itemPrice;
 
             return (
@@ -246,18 +246,6 @@ export const StallCard: React.FC<StallCardProps> = ({
                     <div className="flex items-center justify-center p-1 bg-white border border-slate-300 rounded-lg shadow-2xs gap-1">
                       <button
                         type="button"
-                        onClick={() => onUpdateItem(item.id, "price", 10000)}
-                        className={`flex-1 py-1.5 px-2 text-xs font-extrabold rounded-md transition-all ${
-                          itemPrice === 10000
-                            ? "bg-emerald-600 text-white shadow-xs"
-                            : "bg-slate-50 text-slate-600 hover:bg-slate-100"
-                        }`}
-                        title="Harga Rp 10.000"
-                      >
-                        10.000
-                      </button>
-                      <button
-                        type="button"
                         onClick={() => onUpdateItem(item.id, "price", 9000)}
                         className={`flex-1 py-1.5 px-2 text-xs font-extrabold rounded-md transition-all ${
                           itemPrice === 9000
@@ -267,6 +255,18 @@ export const StallCard: React.FC<StallCardProps> = ({
                         title="Harga Rp 9.000"
                       >
                         9.000
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => onUpdateItem(item.id, "price", 8000)}
+                        className={`flex-1 py-1.5 px-2 text-xs font-extrabold rounded-md transition-all ${
+                          itemPrice === 8000
+                            ? "bg-emerald-600 text-white shadow-xs"
+                            : "bg-slate-50 text-slate-600 hover:bg-slate-100"
+                        }`}
+                        title="Harga Rp 8.000"
+                      >
+                        8.000
                       </button>
                     </div>
                   </div>

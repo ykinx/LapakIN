@@ -21,17 +21,17 @@ import { formatWhatsAppReport } from "@/utils/whatsapp";
 import { Sparkles } from "lucide-react";
 
 const INITIAL_PRESET_STALLS = [
-  "Lapak Jajansepuluh Ribu",
+  "Lapak Jajan Saepuluh Ribu",
   "Lapak Pestajajan",
   "Lapak Jajan Pagi",
   "Lapak Sarapan Berkah",
-  "Lapak Serba Sepuluhribu",
+  "Lapak Serba Sepuluh Ribu",
 ];
 const INITIAL_PRESET_PRODUCTS = [
-  "Macaroni macc n cheese",
-  "Spagetti carbonara",
-  "Manggo sticky rice",
-  "roasted milk tea",
+  "Macaroni Mac n Cheese",
+  "Spagetti Carbonara",
+  "Manggo Sticky Rice",
+  "Roasted Milk Tea",
 ];
 
 let idCounter = 1;
